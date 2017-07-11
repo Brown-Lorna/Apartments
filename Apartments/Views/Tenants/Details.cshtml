@@ -43,6 +43,7 @@
         <table class="table">
             <tr>
                 <th>Address</th>
+                <th>Contract Period</th>
                 <th>Month Park Fee</th>
                 <th>Month Utility Fee</th>
                 <th>Monthly Rent</th>
@@ -50,7 +51,7 @@
             </tr>
             @foreach (var item in Model.Contracts)
             {
-                var months = Math.Abs((item.Apartment.LastCleanDate.Month - DateTime.Now.Month) + 12 * (item.Apartment.LastCleanDate.Year - DateTime.Now.Year));
+                var months = Math.Abs((item.EndDate.Month - item.StartDate.Month) + 12 * (item.EndDate.Year - item.StartDate.Year));
 
                 if (item.Apartment.IsVacant == false)
                 {
@@ -58,6 +59,9 @@
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Apartment.AptAddress)
+                        </td>
+                        <td>
+                            @String.Format("{0} Months", months)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Apartment.MonthParkfee)

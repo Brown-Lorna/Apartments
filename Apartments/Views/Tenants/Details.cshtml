@@ -55,31 +55,38 @@
 
                 if (item.Apartment.IsVacant == false)
                 {
-                    var sum = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Apartment.AptAddress)
-                        </td>
-                        <td>
-                            @String.Format("{0} Months", months)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Apartment.MonthParkfee)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Apartment.MonthUtilityFee)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MonthlyRent)
-                        </td>
-                        <td>
-                            @String.Format("{0:c}", sum)
-                        </td>
-                    </tr>
+                    if (months > 0)
+                    {
+                        var sum = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Apartment.AptAddress)
+                            </td>
+                            <td>
+                                @String.Format("{0} Months", months)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Apartment.MonthParkfee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Apartment.MonthUtilityFee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MonthlyRent)
+                            </td>
+                            <td>
+                                @String.Format("{0:c}", sum)
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr><td colspan="6" style="text-align: center">Contract expired tenant needs to renew</td></tr>
+                    }
                 }
                 else
                 {
-                    <tr><td colspan="5" style="text-align: center">Tenant no longer lives here</td></tr>
+                    <tr><td colspan="6" style="text-align: center">Tenant no longer lives here</td></tr>
                 }
 
             }

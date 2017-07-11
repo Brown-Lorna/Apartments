@@ -1,0 +1,9 @@
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.deps.json
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.json
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.dev.json
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.AssemblyInfo.cs
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.dll
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.pdb
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.csprojResolveAssemblyReference.cache
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.dll
+C:\Users\williamv\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.pdb

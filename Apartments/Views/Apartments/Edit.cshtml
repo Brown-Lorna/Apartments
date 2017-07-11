@@ -1,0 +1,72 @@
+@model Apartments.Models.Apartment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Apartment</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ApartmentId" />
+        <div class="form-group">
+            <label asp-for="AptAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AptAddress" class="form-control" />
+                <span asp-validation-for="AptAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SqFootage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SqFootage" class="form-control" />
+                <span asp-validation-for="SqFootage" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MonthUtilityFee" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MonthUtilityFee" class="form-control" />
+                <span asp-validation-for="MonthUtilityFee" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MonthParkfee" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MonthParkfee" class="form-control" />
+                <span asp-validation-for="MonthParkfee" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastCleanDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastCleanDate" class="form-control" />
+                <span asp-validation-for="LastCleanDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsVacant" />
+                    <label asp-for="IsVacant"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

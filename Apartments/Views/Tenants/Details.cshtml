@@ -1,0 +1,88 @@
+@using System
+@model Apartments.Models.Tenant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tenant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.Contracts)
+    </dt>
+    <dd>
+        <table class="table">
+            <tr>
+                <th>Address</th>
+                <th>Month Park Fee</th>
+                <th>Month Utility Fee</th>
+                <th>Monthly Rent</th>
+                <th>Total</th>
+            </tr>
+            @foreach (var item in Model.Contracts)
+            {
+                var months = Math.Abs((item.Apartment.LastCleanDate.Month - DateTime.Now.Month) + 12 * (item.Apartment.LastCleanDate.Year - DateTime.Now.Year));
+
+                if (item.Apartment.IsVacant == false)
+                {
+                    var sum = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apartment.AptAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apartment.MonthParkfee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apartment.MonthUtilityFee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MonthlyRent)
+                        </td>
+                        <td>
+                            @String.Format("{0:c}", sum)
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr><td colspan="5" style="text-align: center">Tenant no longer lives here</td></tr>
+                }
+
+            }
+        </table>
+    </dd>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TenantId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

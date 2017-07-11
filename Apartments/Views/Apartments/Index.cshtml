@@ -1,0 +1,68 @@
+@model IEnumerable<Apartments.Models.Apartment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Apartments</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AptAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SqFootage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthUtilityFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthParkfee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastCleanDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVacant)
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    var months = Math.Abs((item.LastCleanDate.Month - DateTime.Now.Month) + 12 * (item.LastCleanDate.Year - DateTime.Now.Year));
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AptAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SqFootage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthUtilityFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthParkfee)
+            </td>
+            <td style="color: @(months >= 6 ? "red" : "green")">
+                @Html.DisplayFor(modelItem => item.LastCleanDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVacant)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ApartmentId" class="btn btn-success">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ApartmentId" class="btn btn-primary">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ApartmentId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -19,10 +19,45 @@ namespace Apartments.Controllers
             _context = context;
         }
 
-        // GET: Tenants
-        public async Task<IActionResult> Index()
+        /*
+                             GET: Tenants
+          In the index we will get tenants' information
+          ADDED: Sort and search capabilities:
+            - Sort Name
+            - Search for Name (last/first)
+        */
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Tenants.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["LastNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Lname_desc" : "Lname_asc";
+            ViewData["CurrentFilter"] = searchString;
+
+            var tenant = from t in _context.Tenants
+                select t;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                tenant = tenant.Where(t => t.FirstName.Contains(searchString)
+                                           || t.LastName.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    tenant = tenant.OrderByDescending(t => t.FirstName);
+                    break;
+                case "Lname_asc":
+                    tenant = tenant.OrderBy(t => t.LastName);
+                    break;
+                case "Lname_desc":
+                    tenant = tenant.OrderByDescending(t => t.LastName);
+                    break;
+                default:
+                    tenant = tenant.OrderBy(t => t.FirstName);
+                    break;
+            }
+            return View(await tenant.AsNoTracking().ToListAsync());
         }
 
         // GET: Tenants/Details/5

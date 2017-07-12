@@ -10,18 +10,32 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<!--Added a contract search-->
+<!--This include search and sort by Name and apartment-->
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            Find by apartment: <input type="text" name="SearchApt" value="@ViewData["currentFilter2"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.StartDate)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EndDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MonthlyRent)
-                </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.EndDate)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["RentSortParm"]">@Html.DisplayNameFor(model => model.MonthlyRent)</a>
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Apartment)
             </th>

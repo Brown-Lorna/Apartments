@@ -10798,10 +10798,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\williamv\\Documents\\Visual Studio 2017\\Projects\\Apartments\\Apartments\\Apartments.csproj",
+      "projectUniqueName": "C:\\Users\\williamv\\Desktop\\Apartments\\Apartments\\Apartments.csproj",
       "projectName": "Apartments",
-      "projectPath": "C:\\Users\\williamv\\Documents\\Visual Studio 2017\\Projects\\Apartments\\Apartments\\Apartments.csproj",
-      "outputPath": "C:\\Users\\williamv\\Documents\\Visual Studio 2017\\Projects\\Apartments\\Apartments\\obj\\",
+      "projectPath": "C:\\Users\\williamv\\Desktop\\Apartments\\Apartments\\Apartments.csproj",
+      "outputPath": "C:\\Users\\williamv\\Desktop\\Apartments\\Apartments\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

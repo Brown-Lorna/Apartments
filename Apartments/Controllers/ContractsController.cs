@@ -19,10 +19,51 @@ namespace Apartments.Controllers
             _context = context;    
         }
 
-        // GET: Contracts
-        public async Task<IActionResult> Index()
+        /*
+                             GET: Contracts
+          In the index we will obtain tenant, apartment and contract information
+          ADDED: Sort and search capabilities:
+            - Sort Rent and End date
+            - Search for Name (last/first) and apt address 
+        */
+
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string searchApt)
         {
-            var apartmentContext = _context.Contracts.Include(c => c.Apartment).Include(c => c.Tenant);
+            ViewData["RentSortParm"] = String.IsNullOrEmpty(sortOrder) ? "rent_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["CurrentFilter2"] = searchApt;
+
+            var apartmentContext = from ac in _context.Contracts.Include(c => c.Apartment).Include(c => c.Tenant)
+                select ac;
+
+            if (!String.IsNullOrEmpty(searchApt))
+            {
+                apartmentContext = apartmentContext.Where(ac => ac.Apartment.AptAddress.Contains(searchApt));
+            }
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                apartmentContext = apartmentContext.Where(ac => ac.Tenant.FirstName.Contains(searchString)
+                                                                || ac.Tenant.LastName.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "rent_desc":
+                    apartmentContext = apartmentContext.OrderByDescending(ac => ac.MonthlyRent);
+                    break;
+                case "Date":
+                    apartmentContext = apartmentContext.OrderBy(ac => ac.EndDate);
+                    break;
+                case "date_desc":
+                    apartmentContext = apartmentContext.OrderByDescending(ac => ac.EndDate);
+                    break;
+                default:
+                    apartmentContext = apartmentContext.OrderBy(ac => ac.MonthlyRent);
+                    break;
+            }
+
             return View(await apartmentContext.ToListAsync());
         }
 

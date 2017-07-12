@@ -19,10 +19,43 @@ namespace Apartments.Controllers
             _context = context;    
         }
 
-        // GET: Apartments
-        public async Task<IActionResult> Index()
+        /*
+                        GET: Apartments
+            In the index we will get all relevant information from the db
+            ADDED: Sort and search capabilities:
+            - Sort address and clean date
+            - Search for apt address 
+        */
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Apartments.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+
+            var apts = from a in _context.Apartments
+                select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                apts = apts.Where(a => a.AptAddress.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    apts = apts.OrderByDescending(t => t.AptAddress);
+                    break;
+                case "Date":
+                    apts = apts.OrderBy(t => t.LastCleanDate);
+                    break;
+                case "date_desc":
+                    apts = apts.OrderByDescending(t => t.LastCleanDate);
+                    break;
+                default:
+                    apts = apts.OrderBy(t => t.AptAddress);
+                    break;
+            }
+            return View(await apts.AsNoTracking().ToListAsync());
         }
 
         // GET: Apartments/Details/5

@@ -57,7 +57,7 @@
 
                 if (item.Apartment.IsVacant == false)
                 {
-                    if (months > 0)
+                    if (item.EndDate > DateTime.Now)
                     {
                         var sumMonth = item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent;
                         var sumTotal = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;

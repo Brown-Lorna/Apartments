@@ -9,18 +9,23 @@ namespace Apartments.Models
 {
     public class Apartment : IValidatableObject
     {
+        //Get and set variables from inputs. Validate inputs. User-friendly display headings.
         public int ApartmentId { get; set; }
         [DisplayName("Apt Address")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Apt Address must be between 3 and 50 characters.")]
         public string AptAddress { get; set; }
         [DisplayName("Sq. Footage")]
+        [Range(100, 2000, ErrorMessage = "Sq. Footage must be between 100 and 2000.")]
         public int SqFootage { get; set; }
-        [DisplayName("Month Utility Fee")]
+        [DisplayName("Monthly Utility Fee")]
+        [Range(0, 300, ErrorMessage = "Utility Fee must be between 0 and 300.")]
         [DataType(DataType.Currency)]
         public double MonthUtilityFee { get; set; }
-        [DisplayName("Month Park Fee")]
+        [DisplayName("Monthly Parking Fee")]
+        [Range(0, 20, ErrorMessage = "Parking Fee must be between 0 and 20.")]
         [DataType(DataType.Currency)]
         public double MonthParkfee { get; set; }
-        [DisplayName("Last Clean Date")]
+        [DisplayName("Last Cleaning Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime LastCleanDate { get; set; }

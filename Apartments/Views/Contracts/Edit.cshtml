@@ -15,14 +15,14 @@
         <div class="form-group">
             <label asp-for="StartDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="StartDate" class="form-control" />
+                @Html.TextBoxFor(m => m.StartDate, "{0:yyyy-MM-dd}", htmlAttributes: new { @type = "date", @class = "form-control" })
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <label asp-for="EndDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="EndDate" class="form-control" />
+                @Html.TextBoxFor(m => m.EndDate, "{0:yyyy-MM-dd}", htmlAttributes: new { @type = "date", @class = "form-control" })
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
         </div>

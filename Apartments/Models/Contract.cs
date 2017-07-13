@@ -9,6 +9,7 @@ namespace Apartments.Models
 {
     public class Contract : IValidatableObject
     {
+        //Get and set variables from inputs. Validate inputs. User-friendly display headings.
         public int ContractId { get; set; }
         [DisplayName("Start Date")]
         [DataType(DataType.Date)]
@@ -19,6 +20,7 @@ namespace Apartments.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
         [DisplayName("Monthly Rent")]
+        [Range(100, 3000, ErrorMessage = "Monthly Rent must be between 100 and 3000.")]
         [DataType(DataType.Currency)]
         public double MonthlyRent { get; set; }
         public int ApartmentId { get; set; }

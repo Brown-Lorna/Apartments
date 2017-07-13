@@ -10,17 +10,17 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<!--Added a apt address search-->
+<!-- Search for an apt address -->
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
             Find by apartment: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-action="Index">Back to Full List</a>
+            <input type="submit" value="Search" class="btn btn-default" />
         </p>
     </div>
 </form>
 
+<!-- Table has two sorting columns -->
 <table class="table">
     <thead>
         <tr>
@@ -49,6 +49,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    <!-- Verifies if the last cleaning date is less than 6 months. The date displays in green if less than 6 months and in red if more than six months. -->
     var months = Math.Abs((item.LastCleanDate.Month - DateTime.Now.Month) + 12 * (item.LastCleanDate.Year - DateTime.Now.Year));
         <tr>
             <td>

@@ -10,9 +10,10 @@ namespace Apartments.Data
     {
         public static void Initialize(ApartmentContext context)
         {
+            // This class checks for existing data. If no data is found, it provides the seed data to initialize the local database.
             context.Database.EnsureCreated();
 
-            // Look for any students.
+            // Look for any tenants.
             if (context.Tenants.Any())
             {
                 return;   // DB has been seeded
@@ -38,13 +39,13 @@ namespace Apartments.Data
             var apartments = new Apartment[]
             {
                 new Apartment{AptAddress="2401 Alpine St",SqFootage=1100,MonthUtilityFee=95,MonthParkfee=10,LastCleanDate=DateTime.Parse("01/01/1900")},
-                new Apartment{AptAddress="2402 Alpine St",SqFootage=1100,MonthUtilityFee=75,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")},
-                new Apartment{AptAddress="2403 Alpine St",SqFootage=1100,MonthUtilityFee=60,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")},
+                new Apartment{AptAddress="2402 Alpine St",SqFootage=890,MonthUtilityFee=75,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")},
+                new Apartment{AptAddress="2403 Alpine St",SqFootage=690,MonthUtilityFee=60,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")},
                 new Apartment{AptAddress="2404 Alpine St",SqFootage=1100,MonthUtilityFee=95,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")},
-                new Apartment{AptAddress="2405 Alpine St",SqFootage=1100,MonthUtilityFee=75,MonthParkfee=10,LastCleanDate=DateTime.Parse("01/01/1900")},
-                new Apartment{AptAddress="2406 Alpine St",SqFootage=1100,MonthUtilityFee=60,MonthParkfee=0,LastCleanDate=DateTime.Parse("01/01/1900")},
+                new Apartment{AptAddress="2405 Alpine St",SqFootage=890,MonthUtilityFee=75,MonthParkfee=10,LastCleanDate=DateTime.Parse("01/01/1900")},
+                new Apartment{AptAddress="2406 Alpine St",SqFootage=690,MonthUtilityFee=60,MonthParkfee=0,LastCleanDate=DateTime.Parse("01/01/1900")},
                 new Apartment{AptAddress="2407 Alpine St",SqFootage=1100,MonthUtilityFee=95,MonthParkfee=10,LastCleanDate=DateTime.Parse("01/01/1900")},
-                new Apartment{AptAddress="2408 Alpine St",SqFootage=1100,MonthUtilityFee=75,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")}
+                new Apartment{AptAddress="2408 Alpine St",SqFootage=890,MonthUtilityFee=75,MonthParkfee=5,LastCleanDate=DateTime.Parse("01/01/1900")}
             };
             foreach (Apartment c in apartments)
             {

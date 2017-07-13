@@ -11,19 +11,19 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<!--Added a contract search-->
-<!--This include search and sort by Name and apartment-->
+<!-- Search for contracts. -->
+<!-- This includes search and sort by Name and Apartment Address. -->
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
             Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
             Find by apartment: <input type="text" name="SearchApt" value="@ViewData["currentFilter2"]" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-action="Index">Back to Full List</a>
+            <input type="submit" value="Search" class="btn btn-default" />
         </p>
     </div>
 </form>
 
+<!-- The table is sortable by the contract End Date and the the Monthly Rent. -->
 <table class="table">
     <thead>
         <tr>

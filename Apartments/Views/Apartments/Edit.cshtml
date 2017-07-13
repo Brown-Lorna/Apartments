@@ -43,7 +43,7 @@
         <div class="form-group">
             <label asp-for="LastCleanDate" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="LastCleanDate" class="form-control" />
+                @Html.TextBoxFor(m => m.LastCleanDate, "{0:yyyy-MM-dd}", htmlAttributes: new { @type = "date", @class = "form-control" })
                 <span asp-validation-for="LastCleanDate" class="text-danger"></span>
             </div>
         </div>

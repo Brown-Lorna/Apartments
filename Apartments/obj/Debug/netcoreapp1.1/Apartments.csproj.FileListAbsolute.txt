@@ -16,3 +16,30 @@ C:\Users\williamv\Desktop\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartmen
 C:\Users\williamv\Desktop\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.AssemblyInfo.cs
 C:\Users\williamv\Desktop\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.dll
 C:\Users\williamv\Desktop\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.pdb
+E:\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.deps.json
+E:\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.json
+E:\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.dev.json
+E:\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.dll
+E:\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.pdb
+E:\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.AssemblyInfo.cs
+E:\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.dll
+E:\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.pdb
+E:\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.csprojResolveAssemblyReference.cache
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.deps.json
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.json
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.dev.json
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.dll
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.pdb
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.csprojResolveAssemblyReference.cache
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.AssemblyInfo.cs
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.dll
+C:\Users\Lorna\Documents\Visual Studio 2017\Projects\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.pdb
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.deps.json
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.json
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.runtimeconfig.dev.json
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.dll
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\bin\Debug\netcoreapp1.1\Apartments.pdb
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.csprojResolveAssemblyReference.cache
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.AssemblyInfo.cs
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.dll
+C:\Users\williamv\Downloads\Thursday-Apartments\Apartments\Apartments\obj\Debug\netcoreapp1.1\Apartments.pdb

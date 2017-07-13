@@ -40,14 +40,16 @@
         @Html.DisplayNameFor(model => model.Contracts)
     </dt>
     <dd>
+        <!-- Added a table to display information about tenants, contracts, and apartments together. -->
         <table class="table">
             <tr>
                 <th>Address</th>
                 <th>Contract Period</th>
-                <th>Month Park Fee</th>
-                <th>Month Utility Fee</th>
+                <th>Monthy Parking Fee</th>
+                <th>Monthly Utility Fee</th>
                 <th>Monthly Rent</th>
-                <th>Total</th>
+                <th>Monthly Total</th>
+                <th>Contract Total</th>
             </tr>
             @foreach (var item in Model.Contracts)
             {
@@ -57,7 +59,8 @@
                 {
                     if (months > 0)
                     {
-                        var sum = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;
+                        var sumMonth = item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent;
+                        var sumTotal = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Apartment.AptAddress)
@@ -75,18 +78,21 @@
                                 @Html.DisplayFor(modelItem => item.MonthlyRent)
                             </td>
                             <td>
-                                @String.Format("{0:c}", sum)
+                                @String.Format("{0:c}", sumMonth)
+                            </td>
+                            <td>
+                                @String.Format("{0:c}", sumTotal)
                             </td>
                         </tr>
                     }
                     else
                     {
-                        <tr><td colspan="6" style="text-align: center">Contract expired tenant needs to renew</td></tr>
+                        <tr><td colspan="7" style="text-align: center">Contract expired. Tenant needs to renew</td></tr>
                     }
                 }
                 else
                 {
-                    <tr><td colspan="6" style="text-align: center">Tenant no longer lives here</td></tr>
+                    <tr><td colspan="7" style="text-align: center">Tenant no longer lives here</td></tr>
                 }
 
             }

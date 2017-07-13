@@ -3,6 +3,39 @@
     padding-bottom: 20px;
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Using google fonts Lato and Neuton */ 
+h1 {
+    font-family: 'Neuton', serif;
+}
+
+h2 {
+    font-family: 'Neuton', serif;
+}
+
+h3 {
+    font-family: 'Neuton', serif;
+}
+
+h4 {
+    font-family: 'Lato', sans-serif;
+}
+
+nav {
+    font-family: 'Neuton', serif;
+}
+
+footer {
+    font-family: 'Lato', sans-serif;
+}
+
+th {
+    font-family: 'Lato', sans-serif;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -15,17 +48,6 @@ input,
 select,
 textarea {
     max-width: 280px;
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
 }
 
 /* Hide/rearrange for smaller screens */

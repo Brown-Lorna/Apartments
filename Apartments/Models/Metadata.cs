@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Apartments.Models
-{
+{ /*
     public class TenantMetadata
     {
         [DisplayName("First Name")]
@@ -60,5 +60,5 @@ namespace Apartments.Models
 
         [DisplayName("Monthly Rent")] [DataType(DataType.Currency)]
         public double MonthlyRent;
-    }
+    } */
 }

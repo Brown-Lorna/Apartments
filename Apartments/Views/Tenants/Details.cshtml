@@ -53,12 +53,16 @@
             </tr>
             @foreach (var item in Model.Contracts)
             {
+                // Calculate the number of months in a contract
                 var months = Math.Abs((item.EndDate.Month - item.StartDate.Month) + 12 * (item.EndDate.Year - item.StartDate.Year));
 
+                // Checks to see if apartment is vacant to display content
                 if (item.Apartment.IsVacant == false)
                 {
+                    // Check to see if contract has expired
                     if (item.EndDate > DateTime.Now)
                     {
+                        // Month/Total Calculations
                         var sumMonth = item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent;
                         var sumTotal = (item.Apartment.MonthParkfee + item.Apartment.MonthUtilityFee + item.MonthlyRent) * months;
                         <tr>
